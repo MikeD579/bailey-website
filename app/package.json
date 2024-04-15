@@ -2,11 +2,11 @@
   "name": "app",
   "private": true,
   "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "build": "nuxi build",
+    "dev": "nuxi dev",
+    "generate": "nuxi generate",
+    "preview": "nuxi preview",
+    "postinstall": "nuxi prepare"
   },
   "devDependencies": {
     "@sanity/types": "^3.36.2",

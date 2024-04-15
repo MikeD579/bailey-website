@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "nuxt generate",
+    "generate": "cd app && nuxi generate",
+    "preview": "cd app && npx serve dist",
     "dev": "pnpm -r dev",
     "format": "prettier --cache --write ."
   },
