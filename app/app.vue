@@ -10,14 +10,16 @@
 
   <div class="container">
     <header class="header">
-      <a class="header__title" href="/">Nuxt + Sanity</a>
+      <a class="header__title" href="/">
+        <img src="~/assets/svg/Bailey Dominguez.svg" width="250"/>
+      </a>
     </header>
     <main>
       <NuxtPage />
     </main>
     <footer class="footer">
       <p class="footer__text">
-        Made with
+        Made with L
         <svg
           data-sanity-icon="heart-filled"
           width="1em"
@@ -33,7 +35,7 @@
             stroke-width="1.2"
           ></path>
         </svg>
-        at Sanity
+        V E
       </p>
     </footer>
   </div>
@@ -135,7 +137,7 @@ main {
     font-size: var(--font-size-3);
     line-height: var(--line-height-1);
     padding-left: var(--space-2);
-    margin: var(--space-3) 0;
+    margin: 0;
     text-decoration: none;
     color: var(--black);
   }
