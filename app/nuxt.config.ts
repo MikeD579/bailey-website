@@ -10,6 +10,8 @@ export default defineNuxtConfig({
           'IBM Plex Mono': [500, 700],
           Inter: [500, 700, 800],
           'PT Serif': [400, 700],
+          'Sacramento': [400],
+          'BhuTuka Expanded One': [400],
           download: true,
           inject: true,
         },
