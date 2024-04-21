@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { type Post } from '~/types/Post'
-import { PortableText } from '@portabletext/vue'
+import { PortableText, type PortableTextComponents } from '@portabletext/vue'
 
 const route = useRoute()
 
@@ -8,6 +8,34 @@ const query = groq`*[ _type == "post" && slug.current == $slug][0]`
 const { data: post } = await useSanityQuery<Post>(query, {
   slug: route.params.slug,
 })
+
+const components: PortableTextComponents = {
+  types: {
+    image: ({ value }) => h('img', { src: value.imageUrl }),
+  },
+
+  marks: {
+    link: ({ value }, { slots }) => {
+      const target = (value?.href || '').startsWith('http') ? '_blank' : undefined;
+      return h(
+        'a',
+        { href: value?.href, target, rel: target === '_blank' && 'external', style: 'text-decoration: none;' },
+        slots.default?.(),
+      );
+    },
+  },
+
+  block: {
+    // Ex. 1: customizing common block types
+    h1: (_, { slots }) => h('h1', { class: 'text-2xl' }, slots.default?.()),
+    blockquote: (_, { slots }) =>
+      h('blockquote', { class: 'border-l-purple-500' }, slots.default?.()),
+
+    // Ex. 2: rendering custom styles
+    normal: (_, { slots }) =>
+      h('p', { class: 'text-lg text-primary text-purple-700' }, slots.default?.()),
+  },
+};
 </script>
 
 <template>
@@ -23,8 +51,8 @@ const { data: post } = await useSanityQuery<Post>(query, {
       <h1 class="post__title">{{ post.title }}</h1>
       <p class="post__excerpt">{{ post.excerpt }}</p>
       <p class="post__date">{{ formatDate(post._createdAt) }}</p>
-      <div v-if="post.body" class="post__content">
-        <PortableText :value="post.body" />
+      <div v-if="post.body" class="portable__text">
+        <PortableText :value="post.body" :components="components" />
       </div>
     </div>
   </section>
@@ -40,6 +68,7 @@ const { data: post } = await useSanityQuery<Post>(query, {
     width: 100%;
     height: 200px;
     object-fit: cover;
+    border-radius: 3px;
   }
 
   & .post__cover--none {
@@ -48,27 +77,6 @@ const { data: post } = await useSanityQuery<Post>(query, {
 
   & .post__container {
     padding: 0 var(--space-3);
-  }
-
-  & .post__content {
-    font-family: var(--font-family-serif);
-    font-weight: 400;
-    font-size: var(--font-size-4);
-    line-height: var(--line-height-5);
-    letter-spacing: -0.02em;
-    margin-top: var(--space-6);
-
-    /* Targeting tags in PortableText */
-    & blockquote {
-      border-left: 5px solid var(--black);
-      padding-left: var(--space-3);
-      margin-left: var(--space-4);
-    }
-
-    & a {
-      color: var(--blue-600);
-      text-decoration: none;
-    }
   }
 
   & .post__title {

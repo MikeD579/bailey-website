@@ -43,6 +43,7 @@ defineProps<{ post: Post }>()
     width: 100%;
     height: 231px;
     object-fit: cover;
+    border-radius: 3px;
   }
 
   & .card__cover--none {
@@ -56,7 +57,6 @@ defineProps<{ post: Post }>()
     font-weight: 800;
     font-size: var(--font-size-7);
     line-height: var(--line-height-6);
-    letter-spacing: -0.025em;
     margin: var(--space-3) 0;
   }
 

@@ -96,6 +96,36 @@ html {
 body {
   margin: 0;
 }
+
+/*
+ *  my custom global css
+ */
+.portable__text {
+  font-family: var(--font-family-serif);
+  font-weight: 400;
+  font-size: var(--font-size-4);
+  line-height: var(--line-height-5);
+  margin-top: var(--space-6);
+
+  /* Targeting tags in PortableText */
+  & blockquote {
+    border-left: 5px solid var(--black);
+    padding-left: var(--space-3);
+    margin-left: var(--space-4);
+  }
+
+  & a {
+    color: var(--blue-600);
+    text-decoration: none;
+  }
+}
+
+
+br {
+  display: box;
+  line-height: 1rem;
+  border-top: solid black;
+}
 </style>
 
 <style scoped>
@@ -109,15 +139,11 @@ main {
 
 .header {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 0 var(--space-1);
   border-bottom: 1px solid #ced2d9;
-
-  z-index: 10;
   background: var(--white);
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
 
   & .header__title {
     font-weight: 800;

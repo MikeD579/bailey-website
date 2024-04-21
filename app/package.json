@@ -13,7 +13,8 @@
     "@types/node": "^18.17.14",
     "nuxt": "^3.11.1",
     "postcss": "^8.4.38",
-    "postcss-nested": "^6.0.1"
+    "postcss-nested": "^6.0.1",
+    "sass": "^1.75.0"
   },
   "dependencies": {
     "@nuxtjs/google-fonts": "^3.0.0",
