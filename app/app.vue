@@ -88,7 +88,7 @@ const { enabled: previewEnabled, inFrame } = useSanityVisualEditingState()
 }
 
 html {
-  background-color: var(--white);
+  background-image: url(~/assets/img/background.png);
   font-family: var(--font-family-sans), var(--font-family-serif), sans-serif;
   text-size-adjust: 100%;
 }
@@ -131,6 +131,10 @@ br {
 <style scoped>
 .container {
   margin: 0 auto;
+  min-height: 100vh;
+  height: 100%;
+  background-color: var(--white);
+  border-radius: 5px;
 }
 
 main {
