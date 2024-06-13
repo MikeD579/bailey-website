@@ -24,7 +24,7 @@ export default defineNuxtConfig({
       meta: [
         { property: "og:title", content: "Bailey Dominguez" },
         { property: "og:description", content: "Bailey's Disney History Website" },
-        { property: "og:image", content: "ogImage.png" },
+        { property: "og:image", content: "https://baileydominguez.com/ogImage.png" },
         { property: "twitter:title", content: "Bailey Dominguez" },
         { property: "twitter:description", content: "Bailey's Disney History Website" },
       ]
