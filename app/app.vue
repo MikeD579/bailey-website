@@ -31,15 +31,23 @@
 <script setup lang="ts">
 const route = useRoute()
 const { enabled: previewEnabled, inFrame } = useSanityVisualEditingState()
+useHead
+  ({
+    title: 'My App',
+    meta: [
+      { name: 'description', content: 'My amazing site.' }
+    ],
+    bodyAttrs: {
+      class: 'test'
+    },
+    script: [{ innerHTML: 'console.log(\'Hello world\')' }]
+  })
 
 useSeoMeta
   ({
     title: "Bailey Dominguez",
-    ogTitle: "Bailey Dominguez",
     author: "Bailey Dominguez",
     description: "Bailey's Disney History Website",
-    ogDescription: "Bailey's Disney History Website",
-    ogImage: 'ogImage.png',
   })
 </script>
 
