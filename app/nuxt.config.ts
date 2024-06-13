@@ -16,6 +16,13 @@ export default defineNuxtConfig({
       },
     ],
   ],
+  app: {
+    head: {
+      link: [
+        { rel: "icon", href: "Piper.svg", sizes: "any", type: "image/svg+xml" }
+      ]
+    }
+  },
   sanity: {
     projectId: process.env.NUXT_SANITY_PROJECT_ID,
     dataset: process.env.NUXT_SANITY_DATASET,

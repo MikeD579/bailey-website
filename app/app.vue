@@ -31,6 +31,16 @@
 <script setup lang="ts">
 const route = useRoute()
 const { enabled: previewEnabled, inFrame } = useSanityVisualEditingState()
+
+useSeoMeta
+  ({
+    title: "Bailey Dominguez",
+    ogTitle: "Bailey Dominguez",
+    author: "Bailey Dominguez",
+    description: "Bailey's Disney History Website",
+    ogDescription: "Bailey's Disney History Website",
+    ogImage: '~/assets/img/ogImage.png',
+  })
 </script>
 
 <style>
@@ -122,7 +132,7 @@ body {
 
 
 br {
-  display: box;
+  display: felx;
   line-height: 1rem;
   border-top: solid black;
 }
