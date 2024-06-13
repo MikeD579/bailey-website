@@ -39,7 +39,7 @@ useSeoMeta
     author: "Bailey Dominguez",
     description: "Bailey's Disney History Website",
     ogDescription: "Bailey's Disney History Website",
-    ogImage: 'assets/img/ogImage.png',
+    ogImage: 'ogImage.png',
   })
 </script>
 
